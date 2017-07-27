@@ -231,9 +231,11 @@ console.log("called");
 
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
-
+            localStorage.setItem('stat','logged in');
+            //document.getElementById('wlcm_msg').innerHTML+=localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
             $("#ovrlay").hide();
             $("#modal-box").hide();
+            location.reload();
 
         } else {
             // The person is not logged into your app or we are unable to tell.

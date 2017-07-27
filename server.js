@@ -11,12 +11,12 @@ var fs=require('fs');
 
 
 app.use('/',express.static('./public_html'));
-
+const md5=require('md5');
 
 const bodyParser=require('body-parser');
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-
+const db=require('./db.js')
 
 
 app.listen(3800,function(){
@@ -108,24 +108,103 @@ app.post('/signup',function(req,res) {
 
         console.log("signup in server " +req.body.name+req.body.email+req.body.city,req.body.mob+req.body.sex,req.body.pswrd);
 
+var id_my;
+        db.getid(function (result) {
+          id_my=parseInt(result[0].id);
 
-       /* var values ={
-            id:req.body.id,
-            brand: req.body.brand,
+            console.log(typeof(id_my) +"hi id"+result[0].id);
+            var values ={
+                id:id_my+1,
+                name:req.body.name,
+                email: req.body.email,
+                city:req.body.city,
+                mob: req.body.mob,
+                sex:req.body.sex,
+                pswrd:md5(req.body.pswrd),
+
+
+
+            };
+
+            db.signup(values,function(result) {
+                res.send(result);
+            })
+
+            res.send("submitted");
+        })
+        })
+
+
+
+app.post('/chkname',function(req,res) {
+
+    var val = req.body.name;
+    console.log("chkname in server " + req.body.name );
+    db.chkname(val, function (result) {
+        console.log("internl"+result.length);
+
+
+        if(result.length==0)
+        res.send("unique");
+
+        else{
+            res.send("notu");
+        }
+
+    })
+}  )
+
+
+
+
+app.post('/login',function(req,res) {
+
+    var val = req.body.name;
+    console.log("login in server " + req.body.name + md5(req.body.pswrd));
+    db.getpswrd(val, function (result) {
+        console.log(result);
+        if(md5(req.body.pswrd)==result[0].pswrd){
+            res.send("correct");
+        }
+        else{
+            res.send("incorrect");
+        }
+
+
+    })
+}  )
+    //})
+
+    /*db.getid(function (result) {
+        id_my=parseInt(result[0].id);
+
+        console.log(typeof(id_my) +"hi id"+result[0].id);
+        var values ={
+            id:id_my+1,
             name:req.body.name,
-            view: req.body.view,
+            email: req.body.email,
+            city:req.body.city,
+            mob: req.body.mob,
+            sex:req.body.sex,
+            pswrd:md5(req.body.pswrd),
 
 
 
         };
 
-        db.mobile(values,function(result) {
+        db.signup(values,function(result) {
             res.send(result);
         })
-        */
-       res.send("submitted");
-    }
-)
+
+        res.send("submitted");
+    })
+    */
+
+//})
+
+
+
+
 
 
 
