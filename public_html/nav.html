@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link href="./index.css" rel="stylesheet">
+<link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" >
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+
+
+
+<!--for date plugin-->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+
+<script  type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+<!--for date plugin-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+
+
+
+
+<Script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></Script>
+<script type="text/javascript" src="index.js"></script>
+<!--for  fonts-->
+<link rel="stylesheet" type="text/css"href="https://fonts.googleapis.com/css?family=Rancho|Dancing+Script|Black+Ops+One|Kaushan+Script|Ewert|Monofett|Bree+Serif&effect=shadow-multiple|3d-float|3d">
+
+
+<body>
+
+
+
+
+<!--creates top bar/nav bar of page-->
+<nav >
+    <!--logo creation-->
+
+
+    <div class="row">
+        <!-- div for circle -->
+        <div id="cir"  class="col-sm-1"> <!--bcoz col-sm-1 increase size of logo-->
+            <!--div for text inside logo -->
+            <div id="logo_text">E-Event</div>
+
+        </div>
+
+        <!--links creation to diffentsections of page-->
+
+        <div id="all_links"  class="col-sm-7">
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <a href="#ab" >ABOUT</a>           &emsp;
+            <a href="#cnct2" >CONNECT</a>        &emsp;
+            <a href="#" id="signup" onclick=sp()>SIGN-UP</a>        &emsp;
+
+
+
+
+
+
+            <a href="#" id="login" onclick="lg()">LOGIN</a>          &emsp;
+            <a href="#" >FEEDBACK</a>       &emsp;
+        </div>
+
+        <div id="wlcm_msg"  class="col-sm-2">
+            HELLO
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+<div id="ovrlay">
+
+</div>
+
+
+<div id="modal-box2" >
+    <button id="cls2" onclick=lg_cls()>&times;</button>
+
+
+    <form onsubmit="sub2()" id="form2" name="lgform">
+        <!--bootstarp form-->
+        <div class="form-horizontal">
+
+
+            <div id="status2" style="color: red;margin-left: 20px"></div>
+
+            <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+            -->
+
+            <div class="form-group"><!--from grp manages margin between different from elmnts-->
+                <label class="control-label col-sm-3" for="name2">Name*</label><!--control label manages margin of form labels-->
+                <div class=" col-sm-5">
+                    <input type="text"  id="name2" placeholder="enter ur name" required>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2 " for="pswd2" >Password*:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="col-sm-8" id="pswd2" placeholder="password" required style="margin-left:30px ">
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-7">
+                    <button type="submit" class="btn btn-default" >Login</button>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+
+
+</div>
+
+
+
+<!-- ------------------------------------                          -->
+
+
+
+
+<div id="modal-box" >
+    <button id="cls" onclick=sp_cls()>&times;</button>
+
+
+    <form onsubmit="sub1()" id="form1" name="spform">
+        <!--bootstarp form-->
+        <div class="form-horizontal">
+
+            <div id="status" ></div>
+
+
+            <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+            -->
+
+            <div onlogin="checkLoginState()" style="margin-left: 200px" class="fb-login-button" data-width="40" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true" ></div>
+            <br>
+            <br>
+
+
+
+
+            <br>
+
+
+            <div class="form-group"><!--from grp manages margin between different from elmnts-->
+                <label class="control-label col-sm-2" for="name">Name*</label><!--control label manages margin of form labels-->
+                <div class=" col-sm-6">
+                    <input type="text"  id="name" placeholder="enter ur name" required>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="em" >E-mail id*</label>
+                <div class="col-sm-10">
+                    <input type="email" id="em" class="col-sm-6" placeholder="no" required>
+
+
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="cty">Current City</label>
+                <div class="col-sm-10">
+                    <input type="text" class="col-sm-6" id="cty" placeholder="Enter city">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" >Sex</label>
+                <div class="col-sm-10">
+                    <input type="radio" name="gender" value="male">male
+                    <input type="radio" name="gender" value="female">female
+
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="mb" >Mobile-no</label>
+                <div class="col-sm-10">
+                    <input type="text" id="mb" class="col-sm-6" placeholder="no">
+
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pswd">Password*:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="col-sm-6" id="pswd" placeholder="Enter password" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pswd1">Re-type Password:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="col-sm-6" id="pswd1" placeholder="Enter password">
+                </div>
+            </div>
+
+            <div id="msg" style="height:50px ;width:200px;color: red;display:none"></div>
+
+
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" >Submit</button>
+                </div>
+            </div>
+
+
+
+
+
+            <!--hor form-->  </div>
+    </form>
+
+</div><!-- modalbox-->
+
+<!--  ***************************************************************************************   -->
+<!-- ****************************************************************************************   -->
+
+
+
+<!--         *************************from create start*************************          -->
+
+<div id="modal-box3" >
+
+    <button id="cls3" onclick=cr_cls()>&times;</button>
+    <h3 style="color:blue;text-align: center">CREATE EVENT</h3>
+
+    <form onsubmit="sub3()" id="form3" name="crform">
+        <!--bootstarp form-->
+        <div class="form-horizontal">
+
+            <div id="status3" ></div>
+
+
+
+
+            <div class="form-group"><!--from grp manages margin between different from elmnts-->
+                <label class="control-label col-sm-2" for="ename">Event name</label><!--control label manages margin of form labels-->
+                <div class=" col-sm-6">
+                    <input type="text"  id="ename" placeholder="enter event name" required>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="city" >City</label>
+                <div class="col-sm-10">
+                    <input type="text" id="city" class="col-sm-6" placeholder="city" required>
+
+
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="add">Address</label>
+                <div class="col-sm-10">
+                    <textarea class="col-sm-6" id="add" placeholder="Enter complete address" required></textarea>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="datepicker" >Date</label>
+                <div class="col-sm-10">
+                    <input type="text" id="datepicker">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="chg" >Charges</label>
+                <div class="col-sm-10">
+                    <input type="text" id="chg" class="col-sm-6" placeholder="in rupees" required>
+
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="crsub" class="btn btn-default" >Submit</button>
+                </div>
+            </div>
+
+
+
+
+
+            <!--hor form-->  </div>
+    </form>
+
+</div><!-- modalbox-->
+
+
+<!--    -----------------------form ends of create--------------------             -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "myp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery-3.1.1.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.3",
+    "handlebars": "^4.0.10",
+    "mongodb": "^2.2.30",
+    "path": "^0.12.7",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

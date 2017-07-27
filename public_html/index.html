@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="./index.css" rel="stylesheet">
+<link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" >
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+
+
+
+<!--for date plugin-->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+
+<script  type="text/javascript" src="jquery-3.2.1.js"></script>
+
+<!--for date plugin-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+
+
+
+
+<Script src="bootstrap/dist/js/bootstrap.min.js"></Script>
+<script type="text/javascript" src="index.js"></script>
+<!--for  fonts-->
+<link rel="stylesheet" type="text/css"href="https://fonts.googleapis.com/css?family=Rancho|Dancing+Script|Black+Ops+One|Kaushan+Script|Ewert|Monofett|Bree+Serif&effect=shadow-multiple|3d-float|3d">
+
+<style>
+
+
+</style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<body>
+
+<div id="whole_page">
+
+
+
+<!--image div-->
+<div id="backim">
+
+
+<div id="nav-placeholder"></div>
+
+
+
+
+
+    <br><br>
+    <!--animated -->
+
+
+    <div id="one_evnt" class="font-effect-shadow-multiple  font-effect-3d"> Create  events</div>
+
+
+    <div id="scnd_evnt" class="font-effect-shadow-multiple  font-effect-3d"> View events</div>
+
+
+
+
+
+</div><!--back image div-->
+
+    <!--div for create evtnt-->
+    <div class="row">
+
+        <div class="col-sm-6" style="background-color: #3c763d;height:500px;">
+
+            <div id="vw">VIEW ALL EVENTS</div>
+
+             <div id="vw_e">View the list of all upcoming and ongoing events,so that you  will be aware of when and where event of
+            your interest is going to be organised.
+             </div>
+
+            <input id="cityname" placeholder="city/country want to search for">
+            <button id="view-btn" onclick="vw()">VIEW </button>
+            </div><!-- view div ends-->
+
+        <div class="col-sm-6" style="background-color: #4b5257;height:500px;"></div>
+
+
+    </div><!--row of view ends-->
+
+
+    <div class="row">
+        <div class="col-sm-6" style="background-color:#4b5257;height:500px"></div>
+
+        <div class="col-sm-6" style="background-color:#3c763d;height:500px">
+            <div id="cr">CREATE A EVENT</div>
+
+
+
+            <div id="cr_e">Create your own Event so that people can get to
+                know your event and can join it.
+            </div>
+
+            <button id="cr-btn"onclick="cr()" >CREATE</button>
+
+
+
+
+
+
+
+        </div>
+    </div>  <!-- row of create-->
+
+
+    <div id="about" class="font-effect-shadow-multiple  font-effect-3d">
+        <a name="ab">About Us</a>
+        <div id="abt_info">
+            Aren’t you able to know your nearby Events that are for you?
+            <br>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Want to Advertise your Event on a Large scale?
+            <br>     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;So Congrats ,you are at the right place !!!!
+            <br><br>
+        </div>
+
+        <div id="abt_info_2">
+            Motto of E-Event is to Let you know about your interested events that are going to held in your locality.
+            Just select your area and interested event category and we will let you know the events for you.
+            You can also Advertise your Event on a massive scale by creating your own Event on our website.
+            So for what are you waiting ? Celebrate the event by creating it ,inviting more people or by attending the event.
+        </div>
+    </div>
+
+
+<div id="cnct" class="font-effect-shadow-multiple  font-effect-3d">
+    <a name="cnct2">CONNECT</a>
+    <div class="row">
+            <div id="one" class="col-sm-3" > <div class="ins">Name</div> <div class="ins">E-mail</div> <div class="ins">Message</div>          </div>
+            <div id="two" class="col-sm-5" >  <input type="text" size="30" style="margin-top:80px;margin-left: 50px"><br><input type="email" size="30" style="margin-top:20px;margin-left: 50px"><br> <textarea rows="3" cols="30" style="margin-left: 50px;margin-top: 30px;"></textarea>                                  </div>
+            <div id="three" class="col-sm-4" >  <div id="flw">FOLLOW US</div>  <div id="flw_text">  If you want to know the regular details of your
+                interested category events then you can follow us on facebook, linkedin, twitter ,youtube, google+.</div></div>
+    </div>
+
+
+
+
+</div>  <!--conect ends-->
+
+
+
+  <div id="upcming">
+      <a name="upcm">UPCOMING EVENTS</a>
+
+  </div>
+
+
+
+
+
+
+
+</div><!--wholepage-->
+
+
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+        console.log("done");
+    });
+</script>
+
+
+
+<script>
+    $( function() {
+
+
+
+
+        $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange:"2017:2025",
+            dateFormat:"dd/mm/yy",
+
+        });
+    } );
+</script>
+
+
+
+<script>
+
+    window.fbAsyncInit = function() {
+console.log("called");
+        FB.init({
+            appId            : '1929665443920092',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+        });
+
+
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+    }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+
+            $("#ovrlay").hide();
+            $("#modal-box").hide();
+
+        } else {
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        }
+    }
+
+
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+
+        });
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+
+</html>
