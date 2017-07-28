@@ -19,8 +19,19 @@ app.use(bodyParser.json());
 const db=require('./db.js')
 
 
-app.listen(3800,function(){
-    console.log("server running on port 3800");
+const nodemailer=require('nodemailer');
+
+var transporter=nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'doordiedoordie6@gmail.com', //email address to send from
+        pass: 'Pujasvi@123' //the actual password for that account
+    }
+});
+
+
+app.listen(4000,function(){
+    console.log("server running on port 4000");
 })
 
 
@@ -102,18 +113,43 @@ app.post('/getcity',function(req,res){
 
 })
 
-
-
+var host="localhost:4000",rand;
+var HelperOptions;
+var values1;
 app.post('/signup',function(req,res) {
 
         console.log("signup in server " +req.body.name+req.body.email+req.body.city,req.body.mob+req.body.sex,req.body.pswrd);
+
+
+
+    rand=Math.floor((Math.random() * 100) + 54);
+    link="http://"+host+"/verify?id="+rand;
+
+
+
+     HelperOptions={
+        from:'pujasvi <doordiedoordie6@gmail.com>',
+        to:'pujasvirakheja1@gmail.com',
+        subject: "Please confirm your Email account "+req.body.name,
+        html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
+
+
+    };
+
+    transporter.sendMail(HelperOptions,function(err,info){
+        if(err){
+            console.log(err);
+        }
+        console.log(" the msg has sent");
+        console.log(info);
+    });
 
 var id_my;
         db.getid(function (result) {
           id_my=parseInt(result[0].id);
 
             console.log(typeof(id_my) +"hi id"+result[0].id);
-            var values ={
+             values1 ={
                 id:id_my+1,
                 name:req.body.name,
                 email: req.body.email,
@@ -126,13 +162,37 @@ var id_my;
 
             };
 
-            db.signup(values,function(result) {
-                res.send(result);
-            })
 
             res.send("submitted");
         })
         })
+
+app.get('/verify',function(req,res){
+    console.log(req.protocol+":/"+req.get('host'));
+    if((req.protocol+"://"+req.get('host'))==("http://"+host))
+    {
+        console.log("Domain is matched. Information is from Authentic email");
+        if(req.query.id==rand)
+        {
+            console.log("email is verified");
+            res.end("<h1>Email "+HelperOptions.to+" is been Successfully verified");
+            db.signup(values1,function(result) {
+                res.send(result);
+            })
+
+        }
+        else
+        {
+            console.log("email is not verified");
+            res.end("<h1>Bad Request</h1>");
+        }
+    }
+    else
+    {
+        res.end("<h1>Request is from unknown source");
+    }
+});
+
 
 
 

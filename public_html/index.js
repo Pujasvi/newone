@@ -140,7 +140,7 @@ sub1=function(){
                         },
                         function (data, status) {
                             console.log("/sign up working" + status);
-                            alert("signup succesfully");
+
 
                         })
 
