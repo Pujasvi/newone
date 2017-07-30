@@ -34,10 +34,10 @@
     </div>
     <br>
 
-    <div id="dest">
-    </div>
+    <div id="dest" style="font-size: 30px ;color:blue;text-align: center"></div>
 
 
+<div id="abt2" style="margin-left:30px;font-size: 25px "></div>
 
 </div>
 
@@ -46,10 +46,95 @@
 
 
 <script>
-    $(function(){
+    $(function() {
         $("#nav-placeholder").load("nav.html");
         console.log("done");
-    });
+        var ob = localStorage.getItem('data');
+        var ob2 = JSON.parse(ob);
+
+        // alert(window.location.href.substring(34));
+        //     document.getElementById('abt2').innerhtml=
+        var evntname = window.location.href.substring(34);
+        var cityname = localStorage.getItem('city');
+        //alert(evntname+cityname);
+
+
+        $.post('/getabt', {
+                evntname: evntname,
+                cityname: cityname,
+
+            },
+            function (data, status) {
+            //alert("hello in html3");
+              document.getElementById('abt2').innerHTML=data;
+                console.log("get abt in html3"+data);
+            }
+        );
+    })
+
+
+
+
+
+    window.fbAsyncInit = function() {
+        console.log("called");
+        FB.init({
+            appId            : '1929665443920092',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+        });
+
+
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+    }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            localStorage.setItem('stat','logged in');
+            // document.getElementById('wlcm_msg').innerHTML="hello"+localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
+            $("#ovrlay").hide();
+            $("#modal-box").hide();
+            location.reload();
+
+        } else {
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        }
+    }
+
+
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+
+        });
+    }
+
+
+
 </script>
 
 </body>

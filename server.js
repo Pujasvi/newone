@@ -10,6 +10,18 @@ var cheerio=require('cheerio');
 var fs=require('fs');
 
 
+var cloudinary = require('cloudinary');
+
+
+
+cloudinary.config({
+    cloud_name: 'dr2p7rxs7',
+    api_key: '653217717858436',
+    api_secret: 'YShS2-7y-7bClMFrG_QtiSwm5tI'
+});
+
+
+
 app.use('/',express.static('./public_html'));
 const md5=require('md5');
 
@@ -30,23 +42,14 @@ var transporter=nodemailer.createTransport({
 });
 
 
-app.listen(4000,function(){
-    console.log("server running on port 4000");
+app.listen(4100,function(){
+    console.log("server running on port 4100");
 })
 
 
 
 
 app.post('/getcity',function(req,res){
-
- /*   db.events_id_find(function (result) {
-
-            console.log(result[0]);
-
-            res.send(result);
-        }
-    )
-*/
 
     arr=[];
     arr2=[];
@@ -97,12 +100,32 @@ app.post('/getcity',function(req,res){
                 item3:arr3[i],
                 item4:urls[i],
                 item5:arr5[i],
+                item6:null
             })
 
             console.log(i+1+'  '+arr[i]+' '+arr2[i]+'  '+arr3[i]+arr5[i]+"  url is  "+urls[i]);
         }
 
-        res.send(arr4);
+
+        db.mycre(countryname, function (result) {
+           // console.log("internl of mycre server"+result.abt);
+            for(var i=0;i<result.length;i++) {
+                arr4.push({
+                    item1: result[i].name,
+                    item2: result[i].date,
+                    item3: result[i].city + result[i].add,
+                    item4: result[i].link,
+                    item5: "./index3.html",
+                    item6:result[i].abt,
+                })
+            }
+
+            res.send(arr4);
+        })
+
+
+
+
 
     });
 
@@ -113,7 +136,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host="localhost:4000",rand;
+var host="localhost:4100",rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
@@ -129,7 +152,7 @@ app.post('/signup',function(req,res) {
 
      HelperOptions={
         from:'pujasvi <doordiedoordie6@gmail.com>',
-        to:'pujasvirakheja1@gmail.com',
+        to:req.body.email,
         subject: "Please confirm your Email account "+req.body.name,
         html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
 
@@ -216,6 +239,80 @@ app.post('/chkname',function(req,res) {
 
 
 
+app.post('/getabt',function(req,res) {
+
+    var city = req.body.cityname;
+    var eve=req.body.evntname;
+
+var val={
+    city:req.body.cityname,
+    eve:req.body.evntname,
+}
+
+
+    console.log("getabt  in server " + city+eve);
+    db.getabt(val, function (result) {
+
+
+   res.send(result);
+
+    })
+}  )
+
+
+
+
+app.post('/savefb',function(req,res) {
+
+
+    var val={
+        a:req.body.a,
+        b:req.body.b,
+        c:req.body.c,
+    }
+
+
+    console.log("savefb  in server "+req.body.a+req.body.b+req.body.c);
+
+    db.savefb(val);
+
+    res.send("success");
+}  )
+
+
+app.post('/cre',function(req,res) {
+var values;
+    cloudinary.uploader.upload(req.body.im, function (result) {
+        console.log(result);
+        console.log("puublic is" + result.url);
+        im = result.url;
+
+
+        console.log("create server " + req.body.im);
+        values = {
+
+            name: req.body.name,
+
+            city: req.body.city,
+            add: req.body.add,
+            date: req.body.date,
+            link: im,
+            abt: req.body.abt,
+
+        };
+        db.cre(values,function (result) {
+
+            res.send("submitted");
+        })
+
+    })
+
+
+
+
+}  )
+
+
 
 app.post('/login',function(req,res) {
 
@@ -233,82 +330,3 @@ app.post('/login',function(req,res) {
 
     })
 }  )
-    //})
-
-    /*db.getid(function (result) {
-        id_my=parseInt(result[0].id);
-
-        console.log(typeof(id_my) +"hi id"+result[0].id);
-        var values ={
-            id:id_my+1,
-            name:req.body.name,
-            email: req.body.email,
-            city:req.body.city,
-            mob: req.body.mob,
-            sex:req.body.sex,
-            pswrd:md5(req.body.pswrd),
-
-
-
-        };
-
-        db.signup(values,function(result) {
-            res.send(result);
-        })
-
-        res.send("submitted");
-    })
-    */
-
-//})
-
-
-
-
-
-
-
-
-/*
-app.post('/getinfo',function(req,res){
-
-
-
-    arr=[];
-    arr2=[];
-    arr3=[];
-    arr4=[];
-
-    var url="https://www.everfest.com/e/hanuman-jayanti-hyderabad-india";
-    console.log(" link is"+url);
-
-    request(url,function(err,resp,body){
-        var $=cheerio.load(body);
-
-
-
-       //console.log($(".read-more-text__body").text());
-
-b=$(".read-more-text__body").text();
-
-      for(var i=0;i<arr.length;i++){
-            arr4.push({item1:arr[i],
-                item2:arr2[i],
-                item3:arr3[i],
-                item4:urls[i],
-                item5:arr5[i],
-            })
-
-           console.log(i+1+'  '+arr[i]+' '+arr2[i]+'  '+arr3[i]+arr5[i]+"  url is  "+urls[i]);
-
-       }
-
-    console.log(b);
-        res.send(b);
-
-    });
-
-
-})
-
-*/

@@ -3,7 +3,45 @@
  */
 window.onload=function () {
 
+
+
+
     $('#mj').hide();
+
+
+    $.post('/getcity', {
+            city:"",
+
+        },
+        function (data, status) {
+
+
+            if(data.length==0){
+                alert("entry for this place doesnot exist");
+            }
+            else {
+                console.log("/getcity default working" + status +"lngth is"+data);
+                localStorage.setItem('data2', JSON.stringify(data));
+
+                for (var item in data) {
+                    item++;
+                }
+                console.log(item);
+
+            }
+        })
+
+    var ob1=localStorage.getItem('data2');
+    var ob12=JSON.parse(ob1);
+    console.log("no of itmes "+ob12.length);
+
+    for(var row2 in ob12) {
+        console.log(row2);
+        document.getElementById('gd').innerHTML += '<div style="background-color:red;margin-left:50px;margin-bottom:10px;height:300px;width:200px;text-wrap: normal">' + '<a href="' + ob12[row2].item5 + '?' + ob12[row2].item1 + '">' + '<img src="' + ob12[row2].item4 + '"+ height="200px" width="200px" >' + '<br>' + '<span style="color:blue;font-size:20px">' + ob12[row2].item1 + '</span>' + '</a>' + '<br>' + ob12[row2].item2 + '<br>' + ob12[row2].item3 + '</div>' + '<br>';
+
+
+        //document.getElementById('abt2').innerHTML=localStorage.getItem('for');
+    }
 
 
     if(localStorage.getItem('stat')=='logged in'){
@@ -14,23 +52,16 @@ window.onload=function () {
     }
     alert("index loaded");
 
-    document.getElementById('dest').innerHTML=localStorage.getItem('city');
-    var ob=localStorage.getItem('data');
-    var ob2=JSON.parse(ob);
-    //console.log(ob2[0].item1);
-    for(var row in ob2) {
-
-        document.getElementById('dest2').innerHTML +='<div style="margin-left: 50px;height:300px;width: 200px;text-wrap: normal" id=" '+row+' " " >'+'<a href="'+ob2[row].item5+'">'+'<img src="' + ob2[row].item4+'"+ height="200px" width="200px" >'+'<br>'+'<span style="color:blue">'+ob2[row].item1+'</span>'+'</a>'+'<br>'+ ob2[row].item2+'<br>'+ob2[row].item3+'</div>'+'<br>';
 
 
-
-    }
+    var i=0;
 
     document.lgform.reset();
     document.spform.reset();
 
 
 }
+
 
 
 logout=function () {
@@ -306,13 +337,39 @@ sub3=function () {
     var name=$('#ename').val();
     var city=$('#city').val();
     var add=$('#add').val();
+    var img=$('#img').val();
 
     var  date=$('#datepicker').val();
     var date1=date.slice(0,2);
     var date2=date.slice(3,5);
     var date3=date.slice(6,10);
 
-    var charges=$('#chg').val();
+    var abt=$('#chg').val();
+
+    $.post('/cre', {
+           name:name,
+           city:city,
+    add:add,
+    date:date,
+        im:img,
+    abt:abt,
+
+        },
+        function (data, status) {
+
+
+
+                console.log("/view working" + status +data);
+                /*localStorage.setItem('data', JSON.stringify(data));
+
+                for (var item in data) {
+                    item++;
+                }
+                console.log(item);
+                window.location = "index2.html";
+            */}
+)
+
 
     console.log("submitted enter create");
 
@@ -329,7 +386,27 @@ sub3=function () {
 
 }
 
+feedback=function () {
 
+var a=$('#fd1').val();
+var b=$('#fd2').val();
+var c=$('#fd3').val();
+console.log(a+b+c);
+    $.post('/savefb',{
+            a:a,
+            b:b,
+            c:c,
+        },
+        function(data, status){
+        console.log("feedback sumbitted");
+    alert("fb submitted");
+document.fdform.reset();
+
+        })
+
+
+
+}
 
 
 
@@ -342,15 +419,21 @@ vw=function () {
 
         },
         function (data, status) {
-            console.log("/view working" + status+data[0].item1);
-            localStorage.setItem('data',JSON.stringify(data));
 
-            for(var item in data){
+
+        if(data.length==0){
+         alert("entry for this place doesnot exist");
+        }
+        else {
+            console.log("/view working" + status +"lngth is"+data);
+            localStorage.setItem('data', JSON.stringify(data));
+
+            for (var item in data) {
                 item++;
             }
-console.log(item);
-           window.location = "index2.html";
-
+            console.log(item);
+            window.location = "index2.html";
+        }
         })
 
 

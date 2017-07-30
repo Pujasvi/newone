@@ -140,7 +140,7 @@
     <a name="cnct2">CONNECT</a>
     <div class="row">
             <div id="one" class="col-sm-3" > <div class="ins">Name</div> <div class="ins">E-mail</div> <div class="ins">Message</div>          </div>
-            <div id="two" class="col-sm-5" >  <input type="text" size="30" style="margin-top:80px;margin-left: 50px"><br><input type="email" size="30" style="margin-top:20px;margin-left: 50px"><br> <textarea rows="3" cols="30" style="margin-left: 50px;margin-top: 30px;"></textarea>                                  </div>
+        <div id="two" style="color: #0f0f0f" class="col-sm-5" ><form name="fdform" id="fdform"><input type="text" id="fd1" size="30" style="margin-top:80px;margin-left: 50px"><br><input id="fd2" type="email" size="30" style="margin-top:20px;margin-left: 50px"><br> <textarea id="fd3" rows="3" cols="30" style="margin-left: 50px;margin-top: 30px;"></textarea> <br><input onclick="feedback()"type="button" style="margin-left:50px" value="send" > </input>        </form>  </div>
             <div id="three" class="col-sm-4" >  <div id="flw">FOLLOW US</div>  <div id="flw_text">  If you want to know the regular details of your
                 interested category events then you can follow us on facebook, linkedin, twitter ,youtube, google+.</div></div>
     </div>
@@ -153,7 +153,12 @@
 
 
   <div id="upcming">
-      <a name="upcm">UPCOMING EVENTS</a>
+      <a name="upcm" id="upcm">UPCOMING EVENTS</a>
+      <br>
+
+      <div id="gd" style="height: 300px;width: 100%;display: flex;flex-direction: row;flex-wrap: wrap">
+      </div>
+
 
   </div>
 
@@ -176,25 +181,12 @@
 
 
 
-<script>
-    $( function() {
-
-
-
-
-        $( "#datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange:"2017:2025",
-            dateFormat:"dd/mm/yy",
-
-        });
-    } );
-</script>
 
 
 
 <script>
+
+
 
     window.fbAsyncInit = function() {
 console.log("called");
@@ -224,13 +216,20 @@ console.log("called");
 
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
-        console.log(response);
+        console.log(response.authResponse);
 
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
 
+
+
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
+            FB.api('/me', {fields: 'first_name'}, function(response) {
+
+                console.log(response.first_name);
+                localStorage.setItem('user',response.first_name);
+            });
             localStorage.setItem('stat','logged in');
             //document.getElementById('wlcm_msg').innerHTML+=localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
             $("#ovrlay").hide();
@@ -248,6 +247,7 @@ console.log("called");
 
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
+
             statusChangeCallback(response);
 
         });
