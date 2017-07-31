@@ -156,7 +156,7 @@ font-size: 25px;
     height:500px;
 
 }
-#cnct a{
+#cmt{
     font-size: 55px;
     margin-left: 450px;
 }
@@ -351,4 +351,434 @@ font-size:50px;
     color:deeppink;
     text-align: center;
 
+}
+.clr2{
+    background-color: #3c763d;
+    height:500px;
+}
+
+.clr{
+    background-color: #4b5257;
+    height:500px;
+}
+#fd1 {
+    margin-top:80px;
+    margin-left: 50px;
+}
+
+#fd2 {
+    margin-top:20px;
+    margin-left: 50px;
+}
+
+#fd3 {
+    margin-top:30px;
+    margin-left: 50px;
+}
+
+#sd{
+    margin-left:50px;
+}
+
+
+@media screen and (min-width:1024px) {
+#whole_page{
+    background-color: red;
+
+
+}
+}
+
+
+@media screen and (max-width:1024px) and (min-width:768px) {
+    #whole_page{
+        background-color: greenyellow;
+        height:3000px;
+
+    }
+    .col-sm-6{
+       /* background-color: #3c763d;
+       */
+        background-color: #2b669a;
+        height:400px;
+
+    }
+    #vw,#cr{
+        font-size:25px;
+    }
+    #vw_e,#cr_e{
+        font-size:20px;
+    }
+    #cityname{
+        margin-left:90px ;
+    }
+    #view-btn,#cr-btn{
+        height: 50px;
+        width: 100px;
+        margin-top:30px;
+        margin-left:130px;
+    }
+    .clr{
+        background-color:tan;
+        height:400px;
+    }
+
+    #about a{
+        font-size: 35px;
+        margin-left: 300px;
+    }
+    #abt_info{
+        margin-left:120px ;
+        font-size: 20px;
+    }
+    #abt_info_2{
+        margin-left: 10px;
+    }
+    #cnct{
+        height: 300px;
+    }
+    #cmt{font-size:35px;
+    margin-left:300px; }
+
+    #one{
+        background-color:hotpink;
+        height:300px;
+        padding:0px;
+    }
+    #two{
+        background-color: #5bc0de;
+        height:300px;
+
+    }
+    #fd1 {
+        margin-top:30px;
+        margin-left:10px;
+    }
+
+    #fd2 {
+        margin-top:20px;
+        margin-left:10px;
+    }
+
+    #fd3 {
+        margin-top:30px;
+        margin-left:10px;
+    }
+    #three{
+        background-color: #bcdff1;
+        height:300px;
+
+    }
+#sd{
+    margin-left:200px ;
+}
+    #flw{
+        font-size: 20px;
+        margin-top: 10px;
+
+    }
+    #upcm{
+        font-size: 35px;
+        margin-left:230px;
+    }
+
+
+}
+
+
+@media screen and (max-width:769px) and (min-width:500px) {
+
+    #whole_page{
+        background-color:lavenderblush;
+
+
+    }
+#cir{
+    height:60px;
+    width: 60px;
+}
+#logo_text{
+    height:20px ;
+    width:50px ;
+    margin-top:20px;
+    margin-left:5px;
+}
+
+    .col-sm-6{
+        /* background-color: #3c763d;
+        */
+        background-color: #2b669a;
+        height:300px;
+
+    }
+    #vw,#cr{
+        margin-left:130px;
+        font-size:25px;
+    }
+    #vw_e,#cr_e{
+        margin-top: 30px;
+        font-size:20px;
+    }
+    #cityname{
+        margin-left:150px ;
+        margin-top: 20px;
+    }
+    #view-btn,#cr-btn{
+        height: 50px;
+        width: 100px;
+        margin-top:30px;
+        margin-left:180px;
+    }
+    .clr{
+       display: none;
+    }
+#about{
+    height: 320px;
+}
+    #about a{
+        font-size: 25px;
+        margin-left: 200px;
+    }
+    #abt_info{
+        margin-left:50px ;
+        font-size: 17px;
+    }
+    #abt_info_2{
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    #cnct{
+        height: 300px;
+    }
+    #cmt{font-size:35px;
+        margin-left:180px; }
+
+    #one{
+        background-color:hotpink;
+        height:300px;
+        padding:0px;
+
+    }
+    .ins{
+        margin-left: 20px;
+    }
+    #two{
+        background-color: #5bc0de;
+        height:300px;
+
+    }
+    #fd1 {
+        margin-top:30px;
+        margin-left:10px;
+        width:150px ;
+    }
+
+    #fd2 {
+
+        margin-top:20px;
+        margin-left:10px;
+        width:150px ;
+    }
+
+    #fd3 {
+        margin-top:30px;
+        margin-left:10px;
+        width: 150px;
+    }
+    #three{
+        background-color: #bcdff1;
+        height:300px;
+
+    }
+    #sd{
+        margin-top: 10px;
+        margin-left:100px ;
+    }
+    #flw{
+        font-size: 20px;
+        margin-top: 10px;
+
+    }
+    #flw_text{
+        font-size: 15px;
+    }
+    #upcm{
+        font-size: 25px;
+        margin-left:120px;
+    }
+
+}
+
+
+
+@media screen and (max-width:500px) {
+
+    #whole_page {
+        background-color:gold;
+        height: 2500px;
+
+    }
+    nav {
+        margin-top: 30px;
+        height: 150px;
+    }
+#wlcm_msg{
+    width: 200px;
+        height: 20px;
+}
+
+    #cir {
+        height: 60px;
+        width: 60px;
+    }
+    #one_evnt,#scnd_evnt{
+        font-size: 20px;
+        height: 50px;
+        width:150px;
+    }
+    @-webkit-keyframes myanim1 {
+        from{
+            margin-left:0px;
+
+        }
+        to{
+            margin-left:160px ;
+        }
+    }
+
+    #backim{
+        height:500px ;
+    }
+    #logo_text {
+        height: 20px;
+        width: 50px;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+
+    .clr2{
+        /* background-color: #3c763d;
+        */
+        background-color: #2b669a;
+        height: 300px;
+
+    }
+
+    #vw, #cr {
+        margin-left: 100px;
+        font-size: 25px;
+    }
+
+    #vw_e, #cr_e {
+        margin-top: 30px;
+        font-size: 15px;
+    }
+
+    #cityname {
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+
+    #view-btn, #cr-btn {
+        height: 40px;
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+
+    .clr {
+        display: none;
+    }
+
+    #about {
+        height: 380px;
+    }
+
+    #about a {
+        font-size: 25px;
+        margin-left: 100px;
+    }
+
+    #abt_info {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    #abt_info_2 {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    #cnct {
+        height: 300px;
+    }
+
+    #cmt {
+        font-size: 35px;
+        margin-left: 80px;
+    }
+
+    #one {
+        background-color: hotpink;
+        height: 300px;
+        padding: 0px;
+
+    }
+
+    .ins {
+        margin-left: 20px;
+        font-size: 15px;
+    }
+
+    #two {
+        background-color: #5bc0de;
+        height: 300px;
+
+    }
+
+    #fd1 {
+        margin-top: 30px;
+        margin-left:0px;
+        width: 110px;
+    }
+
+    #fd2 {
+
+        margin-top: 20px;
+        margin-left:0px;
+        width: 110px;
+    }
+
+    #fd3 {
+        margin-top: 30px;
+        margin-left: 0px;
+        width: 110px;
+    }
+
+    #three {
+        background-color: #bcdff1;
+        height: 300px;
+
+    }
+
+    #sd {
+        margin-top: 10px;
+        margin-left: 40px;
+    }
+
+    #flw {
+        font-size:15px;
+        margin-top: 10px;
+
+    }
+
+    #flw_text {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    #upcm {
+        font-size: 20px;
+        margin-left: 70px;
+    }
 }

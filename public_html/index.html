@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Title</title>
 </head>
 <link href="./index.css" rel="stylesheet">
@@ -76,7 +79,7 @@
     <!--div for create evtnt-->
     <div class="row">
 
-        <div class="col-sm-6" style="background-color: #3c763d;height:500px;">
+        <div class="col-sm-6 clr2">
 
             <div id="vw">VIEW ALL EVENTS</div>
 
@@ -88,16 +91,16 @@
             <button id="view-btn" onclick="vw()">VIEW </button>
             </div><!-- view div ends-->
 
-        <div class="col-sm-6" style="background-color: #4b5257;height:500px;"></div>
+        <div class="col-sm-6 clr" ></div>
 
 
     </div><!--row of view ends-->
 
 
     <div class="row">
-        <div class="col-sm-6" style="background-color:#4b5257;height:500px"></div>
+        <div class="col-sm-6 clr"></div>
 
-        <div class="col-sm-6" style="background-color:#3c763d;height:500px">
+        <div class="col-sm-6 clr2">
             <div id="cr">CREATE A EVENT</div>
 
 
@@ -137,11 +140,11 @@
 
 
 <div id="cnct" class="font-effect-shadow-multiple  font-effect-3d">
-    <a name="cnct2">CONNECT</a>
+    <a id="cmt" name="cnct2">CONNECT</a>
     <div class="row">
-            <div id="one" class="col-sm-3" > <div class="ins">Name</div> <div class="ins">E-mail</div> <div class="ins">Message</div>          </div>
-        <div id="two" style="color: #0f0f0f" class="col-sm-5" ><form name="fdform" id="fdform"><input type="text" id="fd1" size="30" style="margin-top:80px;margin-left: 50px"><br><input id="fd2" type="email" size="30" style="margin-top:20px;margin-left: 50px"><br> <textarea id="fd3" rows="3" cols="30" style="margin-left: 50px;margin-top: 30px;"></textarea> <br><input onclick="feedback()"type="button" style="margin-left:50px" value="send" > </input>        </form>  </div>
-            <div id="three" class="col-sm-4" >  <div id="flw">FOLLOW US</div>  <div id="flw_text">  If you want to know the regular details of your
+            <div id="one" class="col-sm-3 col-xs-3" > <div class="ins">Name</div> <div class="ins">E-mail</div> <div class="ins">Message</div>          </div>
+        <div id="two" style="color: #0f0f0f" class="col-sm-5 col-xs-5" ><form name="fdform" id="fdform"><input type="text" id="fd1" size="30"><br><input id="fd2" type="email" size="30"><br> <textarea id="fd3" rows="3" cols="30" ></textarea> <br><input id="sd" onclick="feedback()"type="button"  value="send" > </input>        </form>  </div>
+            <div id="three" class="col-sm-4 col-xs-4" >  <div id="flw">FOLLOW US</div>  <div id="flw_text">  If you want to know the regular details of your
                 interested category events then you can follow us on facebook, linkedin, twitter ,youtube, google+.</div></div>
     </div>
 
