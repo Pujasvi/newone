@@ -136,7 +136,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host1=req.get('host'),rand;
+var host1=process.env.PORT,rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
@@ -189,9 +189,7 @@ var id_my;
 
             };
 
-            db.signup(values1,function(result) {
-                res.send(result);
-            })
+
             res.send("submitted");
         })
         })
@@ -205,7 +203,9 @@ app.get('/verify',function(req,res){
         {
             console.log("email is verified");
             res.end("<h1>Email "+HelperOptions.to+" is been Successfully verified");
-
+            db.signup(values1,function(result) {
+                res.send(result);
+            })
 
         }
         else
