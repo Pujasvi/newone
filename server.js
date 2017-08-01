@@ -169,8 +169,12 @@ app.post('/signup',function(req,res) {
 
 var id_my;
         db.getid(function (result) {
+            if(result.length!=0)
           id_my=parseInt(result[0].id);
 
+            else{
+                id_my=0;
+            }
             console.log(typeof(id_my) +"hi id"+result[0].id);
              values1 ={
                 id:id_my+1,
