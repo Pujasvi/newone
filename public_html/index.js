@@ -50,7 +50,7 @@ window.onload=function () {
         $("#login").css({"backgroundColor": "gray"});
         $("#signup").css({"backgroundColor": "gray"});
     }
-    alert("index loaded");
+   // alert("index loaded");
 
 
 
