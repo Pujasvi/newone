@@ -175,7 +175,7 @@ var id_my;
             else{
                 id_my=0;
             }
-            console.log(typeof(id_my) +"hi id"+result[0].id);
+            //console.log(typeof(id_my) +"hi id"+result[0].id);
              values1 ={
                 id:id_my+1,
                 name:req.body.name,
