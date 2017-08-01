@@ -325,7 +325,7 @@ app.post('/login',function(req,res) {
     db.getpswrd(val, function (result) {
         console.log(result);
         if(result.length!=0) {
-            if (md5(req.body.pswrd) == result.pswrd) {
+            if (md5(req.body.pswrd) == result[0].pswrd) {
                 res.send("correct");
             }
 
