@@ -41,7 +41,8 @@ var transporter=nodemailer.createTransport({
     }
 });
 
-app.listen(process.env.PORT || 5000, function(){
+var urml=process.env.PORT||5000;
+app.listen( urml, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
@@ -136,7 +137,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host1='0.0.124.61',rand;
+var host1=pujasvi.herokuapp.com,rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
@@ -146,7 +147,7 @@ app.post('/signup',function(req,res) {
 
 
     rand=Math.floor((Math.random() * 100) + 54);
-    link="http://"+host1+"/verify?id="+rand;
+    link="https://"+host1+"/verify?id="+rand;
 
 
 
@@ -194,7 +195,7 @@ var id_my;
         })
         })
 
-app.get('0.0.124.61/verify',function(req,res){
+app.get('/verify',function(req,res){
     console.log(req.protocol+":/"+req.get('host'));
     if((req.protocol+"://"+req.get('host'))==("http://"+host1))
     {
