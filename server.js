@@ -194,7 +194,7 @@ var id_my;
         })
         })
 
-app.get('/verify',function(req,res){
+app.get('0.0.124.61/verify',function(req,res){
     console.log(req.protocol+":/"+req.get('host'));
     if((req.protocol+"://"+req.get('host'))==("http://"+host1))
     {
