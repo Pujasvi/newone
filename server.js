@@ -189,7 +189,9 @@ var id_my;
 
             };
 
-
+            db.signup(values1,function(result) {
+                res.send(result);
+            })
             res.send("submitted");
         })
         })
@@ -203,9 +205,7 @@ app.get('/verify',function(req,res){
         {
             console.log("email is verified");
             res.end("<h1>Email "+HelperOptions.to+" is been Successfully verified");
-            db.signup(values1,function(result) {
-                res.send(result);
-            })
+
 
         }
         else
