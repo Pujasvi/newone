@@ -41,8 +41,7 @@ var transporter=nodemailer.createTransport({
     }
 });
 
-var urml=process.env.PORT||5000;
-app.listen( urml, function(){
+app.listen(process.env.PORT || 5000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
@@ -137,7 +136,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host1=pujasvi.herokuapp.com,rand;
+var host1=process.env.PORT,rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
@@ -147,7 +146,7 @@ app.post('/signup',function(req,res) {
 
 
     rand=Math.floor((Math.random() * 100) + 54);
-    link="https://"+host1+"/verify?id="+rand;
+    link="http://"+host1+"/verify?id="+rand;
 
 
 
