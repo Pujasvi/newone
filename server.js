@@ -136,7 +136,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host="localhost:4100",rand;
+var host1=process.env.PORT,rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
@@ -146,7 +146,7 @@ app.post('/signup',function(req,res) {
 
 
     rand=Math.floor((Math.random() * 100) + 54);
-    link="http://"+host+"/verify?id="+rand;
+    link="http://"+host1+"/verify?id="+rand;
 
 
 
@@ -192,7 +192,7 @@ var id_my;
 
 app.get('/verify',function(req,res){
     console.log(req.protocol+":/"+req.get('host'));
-    if((req.protocol+"://"+req.get('host'))==("http://"+host))
+    if((req.protocol+"://"+req.get('host'))==("http://"+host1))
     {
         console.log("Domain is matched. Information is from Authentic email");
         if(req.query.id==rand)
@@ -320,13 +320,15 @@ app.post('/login',function(req,res) {
     console.log("login in server " + req.body.name + md5(req.body.pswrd));
     db.getpswrd(val, function (result) {
         console.log(result);
-        if(md5(req.body.pswrd)==result[0].pswrd){
-            res.send("correct");
-        }
-        else{
-            res.send("incorrect");
-        }
+        if(result.length!=0) {
+            if (md5(req.body.pswrd) == result.pswrd) {
+                res.send("correct");
+            }
 
+            else {
+                res.send("incorrect");
+            }
+        }
 
     })
 }  )

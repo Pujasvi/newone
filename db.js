@@ -2,7 +2,11 @@
  * Created by pujasvi on 7/27/17.
  */
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/try";
+//var url = "mongodb://localhost:27017/try";
+
+var url= process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://pujasvi:Pujasvi%40789@ds127783.mlab.com:27783/pujasvi1";
+//var url="mongodb://pujasvi:Pujasvi%40789@cluster0-shard-00-00-qb2f2.mongodb.net:27017,cluster0-shard-00-01-qb2f2.mongodb.net:27017,cluster0-shard-00-02-qb2f2.mongodb.net:27017/try?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin"
+//var MONGODB_URI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost", // Make sure to replace that URI with the one provided by MongoLab
 
 
 
@@ -87,8 +91,6 @@ var ids=db.collection('mycollection').find({name:val},{pswrd:1,_id:0}).toArray(f
 function mycre(val,cb) {
     console.log("in mycre");
     MongoClient.connect(url, function(err, db) {
-
-
         var ids=db.collection('mycollection2').find({city:val},{_id:0}).toArray(function (err,results) {
             console.dir("res in db mycre"+results);
             db.close();
