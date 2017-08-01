@@ -136,7 +136,7 @@ app.post('/getcity',function(req,res){
 
 })
 
-var host1=process.env.PORT,rand;
+var host1=req.get('host'),rand;
 var HelperOptions;
 var values1;
 app.post('/signup',function(req,res) {
