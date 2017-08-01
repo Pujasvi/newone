@@ -146,7 +146,7 @@ app.post('/signup',function(req,res) {
 
 
     rand=Math.floor((Math.random() * 100) + 54);
-    link="http://"+host1+"/verify?id="+rand;
+    link="http://"+"pujasvir.herokuapp.com"+"/verify?id="+rand;
 
 
 
