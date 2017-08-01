@@ -58,6 +58,12 @@
 
 
     $(function(){
+
+
+
+        $("#nav-placeholder").load("nav.html");
+
+
         if(localStorage.getItem('stat')=='logged in'){
             console.log("logeed in");
             document.getElementById('wlcm_msg').innerHTML+=localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
@@ -67,7 +73,7 @@
 
 
 
-        $("#nav-placeholder").load("nav.html");
+
         console.log("done");
     });
 
