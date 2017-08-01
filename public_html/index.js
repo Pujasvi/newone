@@ -43,14 +43,14 @@ window.onload=function () {
         //document.getElementById('abt2').innerHTML=localStorage.getItem('for');
     }
 
-
+    alert("index loaded");
     if(localStorage.getItem('stat')=='logged in'){
         console.log("logeed in");
         document.getElementById('wlcm_msg').innerHTML+=localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
         $("#login").css({"backgroundColor": "gray"});
         $("#signup").css({"backgroundColor": "gray"});
     }
-   // alert("index loaded");
+   //
 
 
 
