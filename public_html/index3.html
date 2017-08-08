@@ -51,11 +51,26 @@
 <script>
     $(function() {
         $("#nav-placeholder").load("nav.html");
+
+
+        if(localStorage.getItem('stat')=='logged in'){
+            console.log("logeed in");
+            document.getElementById('wlcm_msg').innerHTML="hello "+localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
+            $("#login").css({"backgroundColor": "gray"});
+            $("#signup").css({"backgroundColor": "gray"});
+        }
+
+
+
+
         console.log("done");
+
+
+
         var ob = localStorage.getItem('data');
         var ob2 = JSON.parse(ob);
 
-        // alert(window.location.href.substring(34));
+        alert(window.location.href.substring(34));
         //     document.getElementById('abt2').innerhtml=
         var evntname = window.location.href.substring(34);
         var cityname = localStorage.getItem('city');
