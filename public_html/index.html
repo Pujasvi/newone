@@ -179,6 +179,17 @@
     $(function(){
         $("#nav-placeholder").load("nav.html");
         console.log("done");
+        var ob1=localStorage.getItem('data2');
+        var ob12=JSON.parse(ob1);
+        console.log("no of itmes "+ob12.length);
+
+        for(var row2 in ob12) {
+            console.log(row2);
+            document.getElementById('gd').innerHTML += '<div style="background-color:red;margin-left:50px;margin-bottom:10px;height:300px;width:200px;text-wrap: normal">' + '<a href="' + ob12[row2].item5 + '?' + ob12[row2].item1 + '">' + '<img src="' + ob12[row2].item4 + '"+ height="200px" width="200px" >' + '<br>' + '<span style="color:blue;font-size:20px">' + ob12[row2].item1 + '</span>' + '</a>' + '<br>' + ob12[row2].item2 + '<br>' + ob12[row2].item3 + '</div>' + '<br>';
+
+
+            //document.getElementById('abt2').innerHTML=localStorage.getItem('for');
+        }
     });
 </script>
 
