@@ -50,13 +50,7 @@ window.onload=function () {
     document.spform.reset();
 
 //alert('load');
-        $("#datepicker").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "2017:2025",
-            dateFormat: "dd/mm/yy",
 
-        });
 
 }
 

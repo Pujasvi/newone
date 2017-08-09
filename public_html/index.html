@@ -179,6 +179,13 @@
     $(function(){
         $("#nav-placeholder").load("nav.html");
         console.log("done");
+        $("#datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "2017:2025",
+            dateFormat: "dd/mm/yy",
+
+        });
         var ob1=localStorage.getItem('data2');
         var ob12=JSON.parse(ob1);
         console.log("no of itmes "+ob12.length);
