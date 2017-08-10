@@ -11,18 +11,22 @@ nav {
 
     height: 150px;
     width: 100%;
-    background-color: blue;
+    background-color:rgba(255, 255, 255, 0.2);
     position: fixed;
     margin-top:50px;
     z-index:5;
+
     padding: 1px; /* to set all nested divs /elmnts with respectto this nav*/
 
 }
 
+
 #cir{
     height:100px;
     width:100px;
-    background-color:red;
+    background-color:#dadada;
+    z-index: 10;
+    opacity: 0.8;
     border-radius:50px;
     margin-top:25px;
     margin-left: 20px;
@@ -42,32 +46,38 @@ nav li{
 #logo_text{
     height:30px;
     width:70px;
-    background-color: green;
+    color:black;
+    font-size:20px ;
     margin-top:35px;
     margin-left:15px;
-    color:white;
+
 }
 
 #wlcm_msg{
-    height:50px;
-    background-color:yellow ;
+    height:80px;
+
     display: inline-block;
     margin-top:50px;
-
-    color:red;
+    font-size: 20px;
+    color:white;
     text-align: center;
 
 }
 
 #all_links{
-    background-color: #2aabd2;
-    height: 30px;
+    /*background-color: #2aabd2;
+    */height: 30px;
     display: inline-block;
     margin-top: 50px;
     display: flex;
     flex-wrap:wrap;
 }
 
+#all_links a:hover{
+    background-color:whitesmoke;
+    transform: scale(1.2);/* for creating zooming effect */
+
+}
 #backim{
     background-image: url('pic2.jpg');
     height:700px;
@@ -82,16 +92,17 @@ nav li{
     height:100px;
     width:300px;
     font-size: 40px;
-    background-color:red;
-    animation: myanim1 2s linear 0s;
+    /*background-color:red;
+    */animation: myanim1 2s linear 0s;
     animation-fill-mode: forwards;
+
 }
 #scnd_evnt{
     height:100px;
     width:300px;
     font-size: 40px;
-    background-color:green;
-    animation: myanim2 2s linear 1s;
+    /*background-color:green;
+    */animation: myanim2 2s linear 1s;
     animation-fill-mode: forwards;
 }
 #whole_page{
@@ -129,7 +140,7 @@ height: 100px;
 
 
 #about{margin-top: 20px;
-    background-color: #2aabd2;
+    background-image: url(pic6.jpg);
     height:400px;
 
 }
@@ -152,7 +163,7 @@ font-size: 25px;
 #cnct{
 
     margin-top: 20px;
-    background-color:gold;
+    background-image: url("pic6.jpg");
     height:500px;
 
 }
@@ -163,16 +174,16 @@ font-size: 25px;
 
 
 #one{
-background-color:hotpink;
+background-image: url("pic9.jpeg");
     height:400px;
     padding: 50px;
 }
 #two{
-background-color: #5bc0de;
+background-image: url("pic9.jpeg");
     height:400px;
 }
 #three{
-background-color: #bcdff1;
+    background-image: url('pic9.jpeg');;
     height:400px;
 }
 
@@ -197,8 +208,8 @@ margin-left: 100px;
 }
 #upcming{
     margin-top:20px;
-    height:500px;
-    background-color:papayawhip;
+    height:1500px;
+    background-image:url("pic6.jpg");
 }
 
 
@@ -353,12 +364,12 @@ font-size:50px;
 
 }
 .clr2{
-    background-color: #3c763d;
+    background-color: white;
     height:500px;
 }
 
 .clr{
-    background-color: #4b5257;
+    background-color: black;
     height:500px;
 }
 #fd1 {
@@ -383,7 +394,7 @@ font-size:50px;
 
 @media screen and (min-width:1024px) {
 #whole_page{
-    background-color: red;
+    background-image: url('pic5.jpg');
 
 
 }

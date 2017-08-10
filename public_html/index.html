@@ -50,8 +50,7 @@
 <div id="whole_page">
 
 
-
-<!--image div-->
+    <!--image div-->
 <div id="backim">
 
 
@@ -75,6 +74,8 @@
 
 
 </div><!--back image div-->
+    <div id="load" style="height:100px ;width:200px;margin-left:200px;background-color:bisque;color:blue;display:inline-block;margin-top: 200px;text-align:center;font-size:30px;margin-left:500px;position:absolute;display: none;z-index: 3000">Loading</div>
+
 
     <!--div for create evtnt-->
     <div class="row">
@@ -184,8 +185,8 @@
         console.log("no of itmes "+ob12.length);
 
         for(var row2 in ob12) {
-            console.log(row2);
-            document.getElementById('gd').innerHTML += '<div style="background-color:red;margin-left:50px;margin-bottom:10px;height:300px;width:200px;text-wrap: normal">' + '<a href="' + ob12[row2].item5 + '?' + ob12[row2].item1 + '">' + '<img src="' + ob12[row2].item4 + '"+ height="200px" width="200px" >' + '<br>' + '<span style="color:blue;font-size:20px">' + ob12[row2].item1 + '</span>' + '</a>' + '<br>' + ob12[row2].item2 + '<br>' + ob12[row2].item3 + '</div>' + '<br>';
+            console.log(row2);0
+            document.getElementById('gd').innerHTML += '<div style="margin-left:50px;margin-bottom:10px;height:380px;width:200px;text-wrap: normal">' + '<a href="' + ob12[row2].item5 + '?' + ob12[row2].item1 + '">' + '<img src="' + ob12[row2].item4 + '"+ height="200px" width="200px" >' + '<br>' + '<span style="color:deepskyblue;font-size:20px">' + ob12[row2].item1 + '</span>' + '</a>' + '<br>' + '<span style="color:gainsboro;font-size:20px">' + ob12[row2].item2 + '<br>'+ '</span>'  + ob12[row2].item3 + '</div>' + '<br>';
 
 
             //document.getElementById('abt2').innerHTML=localStorage.getItem('for');

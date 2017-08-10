@@ -418,6 +418,7 @@ vw=function () {
         },
         function (data, status) {
 
+        alert("results for "+a);
 
         if(data.length==0){
          alert("entry for this place doesnot exist");
@@ -431,10 +432,15 @@ vw=function () {
             }
             console.log(item);
             window.location = "index2.html";
+            $('#ovrlay').hide();
+            $('#load').hide();
         }
         })
 
 
 
  alert(a);
+    $('#ovrlay').show();
+$('#load').show();
+
 }
