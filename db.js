@@ -108,7 +108,7 @@ function getabt(val,cb) {
         {}
 
         var ids=db.collection('mycollection2').find( {$and:[{city:val.city} ,{name:val.eve}]},{_id:0,abt:1}).toArray(function (err,results) {
-            console.dir("res in db getabt"+results[0].abt);
+            console.dir("res in db getabt"+results.abt);
             db.close();
             cb(results[0].abt);
         });

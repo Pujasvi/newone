@@ -370,10 +370,10 @@ margin-top: 0px;
 #dest{
     height:100px;
     width: 100%;
-    background-color: #9dff9d;
+    background-color: lightskyblue;
     margin-top: 200px;
 font-size:50px;
-    color:deeppink;
+    color:whitesmoke;
     text-align: center;
 
 }
@@ -417,14 +417,14 @@ font-size:50px;
 
 @media screen and (max-width:1024px) and (min-width:768px) {
     #whole_page{
-        background-color: greenyellow;
+        background-image: url('pic5.jpg');
         height:3000px;
 
     }
     .col-sm-6{
        /* background-color: #3c763d;
        */
-        background-color: #2b669a;
+        background-color: white;
         height:400px;
 
     }
@@ -444,16 +444,16 @@ font-size:50px;
         margin-left:130px;
     }
     .clr{
-        background-color:tan;
+        background-color:black;
         height:400px;
     }
 
     #about a{
         font-size: 35px;
-        margin-left: 300px;
+        margin-left: 400px;
     }
     #abt_info{
-        margin-left:120px ;
+        margin-left:200px ;
         font-size: 20px;
     }
     #abt_info_2{
@@ -463,17 +463,22 @@ font-size:50px;
         height: 300px;
     }
     #cmt{font-size:35px;
-    margin-left:300px; }
+    margin-left:400px; }
 
     #one{
-        background-color:hotpink;
+        background-color:rgba(150,150,150,1);
+
         height:300px;
         padding:0px;
     }
     #two{
-        background-color: #5bc0de;
+        background-color:rgba(140,140,140,1);
         height:300px;
 
+    }
+    #three{
+        background-color:rgba(150,150,150,1);
+        height: 300px;
     }
     #fd1 {
         margin-top:30px;
@@ -489,11 +494,7 @@ font-size:50px;
         margin-top:30px;
         margin-left:10px;
     }
-    #three{
-        background-color: #bcdff1;
-        height:300px;
 
-    }
 #sd{
     margin-left:200px ;
 }
@@ -504,7 +505,7 @@ font-size:50px;
     }
     #upcm{
         font-size: 35px;
-        margin-left:230px;
+        margin-left:300px;
     }
 
 
@@ -514,8 +515,7 @@ font-size:50px;
 @media screen and (max-width:769px) and (min-width:500px) {
 
     #whole_page{
-        background-color:lavenderblush;
-
+        background-image: url('pic5.jpg');
 
     }
 #cir{
@@ -532,12 +532,12 @@ font-size:50px;
     .col-sm-6{
         /* background-color: #3c763d;
         */
-        background-color: #2b669a;
+        background-color: white;
         height:300px;
 
     }
     #vw,#cr{
-        margin-left:130px;
+        margin-left:200px;
         font-size:25px;
     }
     #vw_e,#cr_e{
@@ -548,38 +548,51 @@ font-size:50px;
         margin-left:150px ;
         margin-top: 20px;
     }
-    #view-btn,#cr-btn{
+    #view-btn{
         height: 50px;
         width: 100px;
         margin-top:30px;
         margin-left:180px;
     }
+#cr-btn{
+    height: 50px;
+    width: 100px;
+    margin-top:30px;
+    margin-left:250px;
+ }
     .clr{
        display: none;
     }
 #about{
+    background-color: white;
+    color: black;
     height: 320px;
 }
     #about a{
+        color: black;
         font-size: 25px;
-        margin-left: 200px;
+        margin-left: 250px;
     }
     #abt_info{
-        margin-left:50px ;
+        margin-left:80px ;
         font-size: 17px;
     }
     #abt_info_2{
-        font-size: 18px;
+        font-size: 16px;
         margin-left: 15px;
     }
     #cnct{
-        height: 300px;
+        height: 370px;
+
     }
-    #cmt{font-size:35px;
-        margin-left:180px; }
+    #cmt{
+        margin-left:250px;
+
+        color: black;
+        font-size: 25px;}
 
     #one{
-        background-color:hotpink;
+        background-color:rgba(150,150,150,1);
         height:300px;
         padding:0px;
 
@@ -588,7 +601,7 @@ font-size:50px;
         margin-left: 20px;
     }
     #two{
-        background-color: #5bc0de;
+        background-color:rgba(140,140,140,1);
         height:300px;
 
     }
@@ -611,7 +624,7 @@ font-size:50px;
         width: 150px;
     }
     #three{
-        background-color: #bcdff1;
+        background-color:rgba(150,150,150,1);
         height:300px;
 
     }
@@ -629,9 +642,13 @@ font-size:50px;
     }
     #upcm{
         font-size: 25px;
-        margin-left:120px;
-    }
+        margin-left:180px;
+            color: black;
 
+    }
+#upcming{
+    height: 2000px;
+}
 }
 
 
@@ -639,8 +656,8 @@ font-size:50px;
 @media screen and (max-width:500px) {
 
     #whole_page {
-        background-color:gold;
-        height: 2500px;
+        background-image: url("pic5.jpg");
+        height: 5000px;
 
     }
     nav {
@@ -648,16 +665,22 @@ font-size:50px;
         height: 150px;
     }
 #wlcm_msg{
+    background-color:black;
     width: 200px;
         height: 20px;
+    color: white;
 }
 
     #cir {
         height: 60px;
         width: 60px;
+
+    }
+    #logo_text{
+        font-size: 14px;
     }
     #one_evnt,#scnd_evnt{
-        font-size: 20px;
+        font-size: 24px;
         height: 50px;
         width:150px;
     }
@@ -684,13 +707,13 @@ font-size:50px;
     .clr2{
         /* background-color: #3c763d;
         */
-        background-color: #2b669a;
+        background-color: white;
         height: 300px;
 
     }
 
     #vw, #cr {
-        margin-left: 100px;
+        margin-left: 80px;
         font-size: 25px;
     }
 
@@ -700,7 +723,7 @@ font-size:50px;
     }
 
     #cityname {
-        margin-left: 70px;
+        margin-left: 80px;
         margin-top: 20px;
     }
 
@@ -708,7 +731,7 @@ font-size:50px;
         height: 40px;
         width: 100px;
         margin-top: 10px;
-        margin-left: 100px;
+        margin-left: 140px;
     }
 
     .clr {
@@ -720,11 +743,13 @@ font-size:50px;
     }
 
     #about a {
+        color: black;
         font-size: 25px;
-        margin-left: 100px;
+        margin-left: 150px;
     }
 
     #abt_info {
+        margin-top: 10px;
         margin-left: 10px;
         font-size: 14px;
     }
@@ -736,15 +761,19 @@ font-size:50px;
 
     #cnct {
         height: 300px;
+
+
+
     }
 
     #cmt {
-        font-size: 35px;
-        margin-left: 80px;
+        color: black;
+        font-size: 25px;
+        margin-left: 150px;
     }
 
     #one {
-        background-color: hotpink;
+        background-color: rgba(150,150,150,1);
         height: 300px;
         padding: 0px;
 
@@ -756,7 +785,7 @@ font-size:50px;
     }
 
     #two {
-        background-color: #5bc0de;
+        background-color: rgba(140,140,140,1);
         height: 300px;
 
     }
@@ -781,7 +810,7 @@ font-size:50px;
     }
 
     #three {
-        background-color: #bcdff1;
+        background-color: rgba(150,150,150,1);
         height: 300px;
 
     }
@@ -806,4 +835,10 @@ font-size:50px;
         font-size: 20px;
         margin-left: 70px;
     }
+    #upcming{
+
+        height: 3200px;
+    }
+
+
 }
