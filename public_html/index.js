@@ -33,7 +33,7 @@ window.onload=function () {
 
 
 
-    alert("index loaded");
+    //alert("index loaded");
     if(localStorage.getItem('stat')=='logged in'){
         console.log("logeed in");
         document.getElementById('wlcm_msg').innerHTML+=localStorage.getItem('user')+'<br>'+'<button id="log" style="height:30px;width:80px;background-color:gainsboro;color: black" onclick="logout()">LOGOUT</button>';
