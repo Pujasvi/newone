@@ -85,7 +85,7 @@
     var ob = localStorage.getItem('data');
     var ob2 = JSON.parse(ob);
     console.log("no of itmes " + ob2.length);
-
+    document.getElementById('dest2').innerHTML=' ';
     for (var row in ob2) {
 
         document.getElementById('dest2').innerHTML += '<div style="margin-left: 50px;height:300px;width: 200px;text-wrap: normal" id=" ' + row + ' " " >' + '<a href="' + ob2[row].item5 + '?' + ob2[row].item1 + '">' + '<img src="' + ob2[row].item4 + '"+ height="200px" width="200px" >' + '<br>' + '<span style="color:blue">' + ob2[row].item1 + '</span>' + '</a>' + '<br>' + ob2[row].item2 + '<br>' + ob2[row].item3 + '</div>' + '<br>';

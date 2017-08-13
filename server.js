@@ -323,15 +323,20 @@ app.post('/login',function(req,res) {
     var val = req.body.name;
     console.log("login in server " + req.body.name + md5(req.body.pswrd));
     db.getpswrd(val, function (result) {
-        console.log(result);
+        console.log("login res is"+result.length);
         if(result.length!=0) {
             if (md5(req.body.pswrd) == result[0].pswrd) {
                 res.send("correct");
             }
 
             else {
+                console.log("enter here in else");
                 res.send("incorrect");
             }
+        }
+        else{
+            console.log("enter here in else");
+            res.send("incorrect");
         }
 
     })

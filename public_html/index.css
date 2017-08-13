@@ -6,6 +6,21 @@ body{
 
 }
 
+#load{
+    height:100px ;
+    width:200px;
+    margin-left:200px;
+    background-color:gainsboro;
+    color:blue;
+    display:inline-block;
+    margin-top: 200px;
+    text-align:center;
+    font-size:30px;
+    margin-left:500px;
+    position:absolute;
+    display: none;
+    z-index: 3000;
+}
 
 nav {
 
@@ -728,18 +743,18 @@ transform: scale(0.8);
         background-color:beige;
 
         width: 500px;
-        margin-left: 10px;
+        margin-left:-100px;
         border-radius: 50px;
 
 
 
-        transform: scale(0.8);
+        transform: scale(0.6);
         height: 600px;
     }
     #modal-box2{
-        transform: scale(0.8);
+        transform: scale(0.6);
         height:250px ;
-        margin-left: 100px;
+        margin-left: 0px;
     }
     #modal-box2 label{
         margin-left: 30px;
@@ -749,8 +764,8 @@ transform: scale(0.8);
     }
     #modal-box3{
 
-        transform: scale(0.8);
-        margin-left:10px;
+        transform: scale(0.6);
+        margin-left:-100px;
         width:500px;
     }
     #cls3{
@@ -783,8 +798,19 @@ transform: scale(0.8);
 
     }
     nav {
+       /* position: relative;
+        */
+        background-color: rgba(0,0,0,0.7);
         margin-top: 30px;
         height: 150px;
+    }
+    nav a{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    #cir{
+        margin-top: 60px;
+        transform: scale(1.2);
     }
 #wlcm_msg{
     background-color:black;
@@ -962,5 +988,8 @@ transform: scale(0.8);
         height: 3200px;
     }
 
-
+#load{
+    transform: scale(0.6);
+    margin-left: 40px;
+}
 }

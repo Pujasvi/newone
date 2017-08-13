@@ -271,7 +271,7 @@ localStorage.setItem('user',a);
         }
         else{
             $('#status2').show();
-            document.getElementById('status2').innerHTML="wrong paswrd";
+            document.getElementById('status2').innerHTML="wrong username/paswrd";
 
         }
 
@@ -422,6 +422,9 @@ vw=function () {
 
         if(data.length==0){
          alert("entry for this place doesnot exist");
+            $('#ovrlay').hide();
+            $('#load').hide();
+
         }
         else {
             console.log("/view working" + status +"lngth is"+data);
@@ -439,7 +442,7 @@ vw=function () {
 
 
 
- alert(a);
+ alert("city entered is "+a);
     $('#ovrlay').show();
 $('#load').show();
 
