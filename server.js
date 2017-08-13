@@ -168,6 +168,7 @@ app.post('/signup',function(req,res) {
     });
 
 var id_my;
+console.log("pass in signup is"+md5(req.body.pswrd));
         db.getid(function (result) {
             if(result.length!=0)
           id_my=parseInt(result[0].id);
